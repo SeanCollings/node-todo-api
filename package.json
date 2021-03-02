@@ -4,7 +4,7 @@
   "description": "Interview Node Challenge",
   "main": "app/index.js",
   "scripts": {
-    "dev": "NODE_ENV=development nodemon",
+    "dev": "cross-env NODE_ENV=development & nodemon",
     "test": "bash -c 'export DOTENV_CONFIG_PATH=$PWD/.env.test; nyc --reporter=text mocha -r dotenv/config \"./src/**/*.spec.js\" --timeout=5000 --exit'"
   },
   "repository": {
@@ -16,6 +16,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "bcrypt": "^5.0.0",
+    "cross-env": "^7.0.3",
     "dotenv": "^8.2.0",
     "jsonwebtoken": "^8.5.1",
     "koa": "^2.13.0",

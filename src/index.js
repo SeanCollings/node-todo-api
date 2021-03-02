@@ -1,14 +1,14 @@
 // Server imports
-const Koa = require("koa");
-const koaBetterBody = require("koa-better-body");
-const convert = require("koa-convert");
-const mount = require("koa-mount");
-const session = require("koa-session");
+const Koa = require('koa');
+const koaBetterBody = require('koa-better-body');
+const convert = require('koa-convert');
+const mount = require('koa-mount');
+const session = require('koa-session');
 const jwt = require('koa-jwt');
-const database = require("./database");
+const database = require('./database');
 // Router imports
-const todoRoutes = require("./routes/todo");
-const authRoutes = require("./routes/auth");
+const todoRoutes = require('./routes/todo');
+const authRoutes = require('./routes/auth');
 
 const PORT = process.env.PORT || 3000;
 
@@ -16,10 +16,10 @@ const main = async () => {
   // Create the database tables
   await database.sequelize.sync();
   const app = new Koa();
-  
-  app.use(session({key: 'koa.sess'}, app));
-  app.use(convert(koaBetterBody({fields: "body"})));
-  
+
+  app.use(session({ key: 'koa.sess' }, app));
+  app.use(convert(koaBetterBody({ fields: 'body' })));
+
   app.use(mount(authRoutes.allowedMethods()));
   app.use(mount(authRoutes.routes()));
 
@@ -31,9 +31,9 @@ const main = async () => {
   return app.listen(PORT, () => {
     console.log(`Server listening on port: ${PORT}`);
   });
-}
+};
 
 /* istanbul ignore if*/
 if (!module.parent) main().then().catch(console.log);
 
-module.exports = {main}
+module.exports = { main };
