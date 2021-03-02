@@ -5,6 +5,7 @@ const convert = require('koa-convert');
 const mount = require('koa-mount');
 const session = require('koa-session');
 const jwt = require('koa-jwt');
+const cors = require('@koa/cors');
 const database = require('./database');
 // Router imports
 const todoRoutes = require('./routes/todo');
@@ -16,6 +17,10 @@ const main = async () => {
   // Create the database tables
   await database.sequelize.sync();
   const app = new Koa();
+
+  if (process.env.NODE_ENV !== 'production') {
+    app.use(cors());
+  }
 
   app.use(session({ key: 'koa.sess' }, app));
   app.use(convert(koaBetterBody({ fields: 'body' })));
