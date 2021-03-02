@@ -1,8 +1,12 @@
 import protectedAxios from '../../utils/protected-axios';
 import { API_URL, URL_GET_TODOS } from '../../constants';
-import { GET_TODOS_ERROR, GET_TODOS_SUCCESS } from '../action-types';
+import { GET_TODOS, GET_TODOS_ERROR, GET_TODOS_SUCCESS } from '../action-types';
 
 export const getTodos = () => async (dispatch) => {
+  dispatch({
+    type: GET_TODOS,
+  });
+
   try {
     const { data } = await protectedAxios.get(`${API_URL}${URL_GET_TODOS}`);
 

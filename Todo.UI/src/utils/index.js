@@ -1,3 +1,5 @@
+import jwtDecode from 'jwt-decode';
+
 export const setCookie = (name, value, hours) => {
   let expires = '';
   if (hours) {
@@ -22,4 +24,9 @@ export const getCookie = (name) => {
 
 export const removeCookie = (name) => {
   document.cookie = `${name}=; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/`;
+};
+
+export const decodeJWT = (token) => {
+  const decoded = jwtDecode(token);
+  return decoded?.name && { name: decoded.name };
 };

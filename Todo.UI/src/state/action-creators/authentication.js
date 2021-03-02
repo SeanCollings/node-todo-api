@@ -6,7 +6,7 @@ import {
   URL_LOGIN,
   URL_REGISTER,
 } from '../../constants';
-import { removeCookie, setCookie } from '../../utils';
+import { decodeJWT, removeCookie, setCookie } from '../../utils';
 import {
   LOGIN_USER,
   LOGIN_USER_ERROR,
@@ -32,6 +32,7 @@ export const registerUser = ({ name, email, password }) => async (dispatch) => {
 
     dispatch({
       type: REGISTER_USER_SUCCESS,
+      payload: decodeJWT(data.token),
     });
   } catch (err) {
     let errorMessage = err.message;
@@ -63,6 +64,7 @@ export const loginUser = ({ name, email, password }) => async (dispatch) => {
 
     dispatch({
       type: LOGIN_USER_SUCCESS,
+      payload: decodeJWT(data.token),
     });
   } catch (err) {
     dispatch({
