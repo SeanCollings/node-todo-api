@@ -1,7 +1,9 @@
 # Overview
+
 This is a <sub><sup>Small</sub></sup> lightweight REST API for a todo list.\
 The API is secured using JWT Authentication & role-based authorization.\
 The idea behind this simple API is to demonstrate technical ability in a given UI framework.
+
 <!-- User
 - This is the default User created by the API
 - Can create, edit, list & remove their own todo items
@@ -9,10 +11,14 @@ The idea behind this simple API is to demonstrate technical ability in a given U
 - Users cannot see other users todo items -->
 
 ## Notes
+
 There is no setup required, the database will be created (in memory) when the API is run, just copy `.env.test` to `.env`.
 You can find the endpoints available in the routes directory or see how the tests interact with the API.
+
 # Instructions
+
 The API is missing a working front-end. To complete the challenge, do the following:
+
 - Create a fork of this repository in your own github account
 - Choose a ui framework, preferably React, Angular+ or Vue & create a ui application in folder named "Todo.UI"
 - The following functionality should be implemented:
@@ -30,16 +36,21 @@ The API is missing a working front-end. To complete the challenge, do the follow
 - Please consider your git history as this will be reviewed
   - Commit & push code regularly
 - Once complete, please send a link to your repository to tim@geminisolution.co.za or elrika@geminisolution.co.za
+
 # Dependencies:
+
 Node v12.6.3
 
 ## Scripts
+
 To run the dev environment after install
+
 ```
 npm run dev
 ```
 
 To run the tests after install
+
 ```
 npm run test
 ```
@@ -72,21 +83,28 @@ To run the tests after install
 npm run test
 ``` -->
 
-
-
 ## TODO.UI - frontend updates
 
-First, from the root folder, cd into TODO.UI:
+First, from the root folder, cd into Todo.UI:
+
 ```
-cd TODO.UI
+cd Todo.UI
 ```
 
 Install all dependencies:
+
 ```
 npm install
 ```
 
 To run the frontend:
+
 ```
 npm run dev
+```
+
+To run the frontend tests:
+
+```
+npm run test
 ```
