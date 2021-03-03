@@ -71,3 +71,22 @@ To run the tests after install
 ```
 npm run test
 ``` -->
+
+
+
+## TODO.UI - frontend updates
+
+First, from the root folder, cd into TODO.UI:
+```
+cd TODO.UI
+```
+
+Install all dependencies:
+```
+npm install
+```
+
+To run the frontend:
+```
+npm run dev
+```
