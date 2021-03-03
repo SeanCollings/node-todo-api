@@ -24,5 +24,5 @@ export const COLOURS = {
   secondary: '#777',
   danger: '#e62828',
   todoBusy: '#f77d7d',
-  todoComplete: '#4ed64c',
+  todoComplete: '#bce2bb',
 };

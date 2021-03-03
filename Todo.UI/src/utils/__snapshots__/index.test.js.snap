@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`utils/index - unit test sortByCreatedDate 1`] = `
+Array [
+  Object {
+    "createdAt": "2020-03-03T19:16:08.047Z",
+  },
+  Object {
+    "createdAt": "2021-01-03T19:16:08.047Z",
+  },
+  Object {
+    "createdAt": "2021-02-03T19:16:08.047Z",
+  },
+  Object {
+    "createdAt": "2021-03-01T19:16:08.047Z",
+  },
+  Object {
+    "createdAt": "2021-03-03T19:16:08.047Z",
+  },
+]
+`;

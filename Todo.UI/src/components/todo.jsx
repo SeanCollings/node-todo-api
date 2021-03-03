@@ -12,11 +12,18 @@ const STodoContainer = styled.div`
     completed ? COLOURS.todoComplete : COLOURS.todoBusy};
   border-radius: 16px;
   padding: 16px;
+  box-shadow: 0px 4px 6px -4px ${COLOURS.secondary};
 `;
 const SButtonContainer = styled.div`
   display: flex;
   justify-content: space-between;
   padding-top: 1rem;
+`;
+const SInput = styled.input`
+  cursor: pointer;
+`;
+const SLabel = styled.label`
+  cursor: pointer;
 `;
 
 const Todo = ({ todo }) => {
@@ -39,15 +46,15 @@ const Todo = ({ todo }) => {
         <input value={todoTask} onChange={(e) => setTodoTask(e.target.value)} />
       </div>
       <div>
-        <input
+        <SInput
           type="checkbox"
           id={id}
           name={id}
           value={todoComplete}
           checked={todoComplete}
           onChange={() => setTodoComplete((curr) => !curr)}
-        ></input>
-        <label htmlFor={id}>Complete</label>
+        ></SInput>
+        <SLabel htmlFor={id}>Complete</SLabel>
       </div>
       <SButtonContainer>
         <SButtonDanger onClick={handleDeleteClick}>Delete</SButtonDanger>

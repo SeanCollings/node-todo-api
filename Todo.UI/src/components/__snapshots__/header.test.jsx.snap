@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should render 1`] = `
+<div
+  className="sc-eCssSg bLRIre"
+>
+  <div
+    className="sc-jSgupP fonzNJ"
+  />
+  <div
+    className="sc-iBPRYJ eBvofg"
+  >
+    <div
+      className="sc-gKsewC flWMrW"
+    >
+      My Todos
+    </div>
+    <div
+      className="sc-fubCfw ciaMen"
+    >
+      <button
+        className="sc-bdfBwQ sc-gsTCUz udtBZ dmETOR"
+        onClick={[Function]}
+      >
+        Log Out
+      </button>
+    </div>
+  </div>
+</div>
+`;

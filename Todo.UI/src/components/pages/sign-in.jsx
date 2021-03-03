@@ -1,17 +1,24 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
+import styled from 'styled-components';
 import { useActions } from '../../hooks/use-actions';
 import { SButtonPrimary, SHeading } from '../styled';
+import { LOGIN_USER_ERROR } from '../../state/action-types';
 
-const SiginInPage = () => {
+const SButton = styled(SButtonPrimary)`
+  margin: 1rem 0;
+`;
+
+const SignInPage = () => {
+  const dispatch = useDispatch();
   const { loginUser } = useActions();
   const history = useHistory();
   const { loading, error, user } = useSelector(({ auth }) => auth);
 
-  const [name, setName] = useState('John');
-  const [email, setEmail] = useState('test@test.com');
-  const [password, setPassword] = useState('123');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   useEffect(() => {
     if (!!user) {
@@ -32,6 +39,12 @@ const SiginInPage = () => {
   };
 
   const handleSubmit = () => {
+    if (!name || !email || !password)
+      return dispatch({
+        type: LOGIN_USER_ERROR,
+        payload: 'Fields may not be empty',
+      });
+
     loginUser({ name, email, password });
   };
 
@@ -69,9 +82,9 @@ const SiginInPage = () => {
             onChange={handleOnChangePassword}
           />
         </div>
-        <SButtonPrimary type="submit" onClick={handleSubmit}>
+        <SButton type="submit" onClick={handleSubmit}>
           Sign In
-        </SButtonPrimary>
+        </SButton>
         <div>
           <Link to="/sign-up"> Don't have an account? Sign Up</Link>
         </div>
@@ -82,4 +95,4 @@ const SiginInPage = () => {
   );
 };
 
-export default SiginInPage;
+export default SignInPage;

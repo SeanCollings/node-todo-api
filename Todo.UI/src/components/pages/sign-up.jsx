@@ -1,17 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
+import styled from 'styled-components';
 import { useActions } from '../../hooks/use-actions';
+import { REGISTER_USER_ERROR } from '../../state/action-types';
 import { SButtonPrimary, SHeading } from '../styled';
+
+const SButton = styled(SButtonPrimary)`
+  margin: 1rem 0;
+`;
 
 const SignUpPage = () => {
   const { registerUser } = useActions();
   const history = useHistory();
   const { loading, error, user } = useSelector(({ auth }) => auth);
 
-  const [name, setName] = useState('John');
-  const [email, setEmail] = useState('test@test.com');
-  const [password, setPassword] = useState('123');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   useEffect(() => {
     if (!!user) {
@@ -32,6 +38,12 @@ const SignUpPage = () => {
   };
 
   const handleSubmit = () => {
+    if (!name || !email || !password)
+      return dispatch({
+        type: REGISTER_USER_ERROR,
+        payload: 'Fields may not be empty',
+      });
+
     registerUser({ name, email, password });
   };
 
@@ -69,9 +81,9 @@ const SignUpPage = () => {
             onChange={handleOnChangePassword}
           />
         </div>
-        <SButtonPrimary type="submit" onClick={handleSubmit}>
+        <SButton type="submit" onClick={handleSubmit}>
           Sign Up
-        </SButtonPrimary>
+        </SButton>
         <div>
           <Link to="/sign-in">Have an account? Sign In</Link>
         </div>

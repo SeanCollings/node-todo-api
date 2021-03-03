@@ -43,6 +43,7 @@ const Header = () => {
   const { signOutUser } = useActions();
 
   const handleLogoutClick = () => {
+    // console.log('signOutUser', signOutUser);
     signOutUser();
   };
 

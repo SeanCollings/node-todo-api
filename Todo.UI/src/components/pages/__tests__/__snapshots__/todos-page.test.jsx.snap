@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should render 1`] = `
+<div>
+  <div
+    className="sc-hKgILt ewOlPy"
+  >
+    Welcome, john
+  </div>
+  <input
+    onChange={[Function]}
+    value=""
+  />
+  <button
+    className="sc-bdfBwQ udtBZ"
+    onClick={[Function]}
+  >
+    Add Todo
+  </button>
+</div>
+`;
+
+exports[`Header should render with todos 1`] = `
+<div>
+  <div
+    className="sc-hKgILt ewOlPy"
+  >
+    Welcome, john
+  </div>
+  <input
+    onChange={[Function]}
+    value=""
+  />
+  <button
+    className="sc-bdfBwQ udtBZ"
+    onClick={[Function]}
+  >
+    Add Todo
+  </button>
+  <div
+    className="sc-fubCfw gYXWeR"
+  >
+    <div
+      className="sc-eCssSg gldGQY"
+    >
+      <div>
+        <input
+          onChange={[Function]}
+          value="First test task"
+        />
+      </div>
+      <div>
+        <input
+          checked={false}
+          className="sc-gKsewC dWswO"
+          id={1}
+          name={1}
+          onChange={[Function]}
+          type="checkbox"
+          value={false}
+        />
+        <label
+          className="sc-iBPRYJ jzDkHa"
+          htmlFor={1}
+        >
+          Complete
+        </label>
+      </div>
+      <div
+        className="sc-jSgupP gjSJny"
+      >
+        <button
+          className="sc-bdfBwQ sc-dlfnbm udtBZ gDwXjy"
+          onClick={[Function]}
+        >
+          Delete
+        </button>
+        <button
+          className="sc-bdfBwQ udtBZ"
+          onClick={[Function]}
+        >
+          Update
+        </button>
+      </div>
+    </div>
+    <div
+      className="sc-eCssSg fHIvyT"
+    >
+      <div>
+        <input
+          onChange={[Function]}
+          value="Second test task"
+        />
+      </div>
+      <div>
+        <input
+          checked={true}
+          className="sc-gKsewC dWswO"
+          id={2}
+          name={2}
+          onChange={[Function]}
+          type="checkbox"
+          value={true}
+        />
+        <label
+          className="sc-iBPRYJ jzDkHa"
+          htmlFor={2}
+        >
+          Complete
+        </label>
+      </div>
+      <div
+        className="sc-jSgupP gjSJny"
+      >
+        <button
+          className="sc-bdfBwQ sc-dlfnbm udtBZ gDwXjy"
+          onClick={[Function]}
+        >
+          Delete
+        </button>
+        <button
+          className="sc-bdfBwQ udtBZ"
+          onClick={[Function]}
+        >
+          Update
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
