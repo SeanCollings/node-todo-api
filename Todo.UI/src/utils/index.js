@@ -27,6 +27,13 @@ export const removeCookie = (name) => {
 };
 
 export const decodeJWT = (token) => {
+  if (!token) return null;
+
   const decoded = jwtDecode(token);
   return decoded?.name && { name: decoded.name };
 };
+
+export const createRandomId = () => Math.random().toString(36).substr(2, 5);
+
+export const sortByCreatedDate = (array) =>
+  array.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));

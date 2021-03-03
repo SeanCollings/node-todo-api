@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import { useActions } from '../../hooks/use-actions';
+import { SButtonPrimary, SHeading } from '../styled';
 
 const SiginInPage = () => {
   const { loginUser } = useActions();
@@ -36,7 +37,7 @@ const SiginInPage = () => {
 
   return (
     <div>
-      <div>Sign Up</div>
+      <SHeading>Sign In</SHeading>
       <form onSubmit={(e) => e.preventDefault()}>
         <div>
           <label htmlFor="name">Name:</label>
@@ -68,9 +69,9 @@ const SiginInPage = () => {
             onChange={handleOnChangePassword}
           />
         </div>
-        <button type="submit" onClick={handleSubmit}>
+        <SButtonPrimary type="submit" onClick={handleSubmit}>
           Sign In
-        </button>
+        </SButtonPrimary>
         <div>
           <Link to="/sign-up"> Don't have an account? Sign Up</Link>
         </div>

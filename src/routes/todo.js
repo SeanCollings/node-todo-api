@@ -20,7 +20,7 @@ router.put('/todo/:id', async (ctx, next) => {
 });
 
 router.del('/todo/:id', async (ctx, next) => {
-  ctx.body = todo.remove(ctx.state.user);
+  ctx.body = await todo.remove(ctx.params.id, ctx.state.user);
 });
 
 module.exports = router;

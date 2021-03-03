@@ -14,6 +14,7 @@ import {
   REGISTER_USER,
   REGISTER_USER_ERROR,
   REGISTER_USER_SUCCESS,
+  SIGN_OUT_USER,
 } from '../action-types';
 
 export const registerUser = ({ name, email, password }) => async (dispatch) => {
@@ -27,6 +28,13 @@ export const registerUser = ({ name, email, password }) => async (dispatch) => {
       email,
       password,
     });
+
+    if (data?.error) {
+      return dispatch({
+        type: REGISTER_USER_SUCCESS,
+        payload: data?.error,
+      });
+    }
 
     setCookie(LOCAL_TOKEN, data.token, 1);
 
@@ -59,6 +67,13 @@ export const loginUser = ({ name, email, password }) => async (dispatch) => {
       email,
       password,
     });
+
+    if (data?.error) {
+      return dispatch({
+        type: LOGIN_USER_ERROR,
+        payload: data?.error,
+      });
+    }
 
     setCookie(LOCAL_TOKEN, data.token, 1);
 

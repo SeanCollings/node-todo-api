@@ -5,6 +5,7 @@ import {
   REGISTER_USER,
   REGISTER_USER_ERROR,
   REGISTER_USER_SUCCESS,
+  SIGN_OUT_USER,
 } from '../action-types';
 
 const intialState = {
@@ -24,6 +25,8 @@ export default (state = intialState, action) => {
     case REGISTER_USER_ERROR:
     case LOGIN_USER_ERROR:
       return { loading: false, error: action.payload, user: null };
+    case SIGN_OUT_USER:
+      return { loading: false, error: null, user: null };
     default:
       return state;
   }

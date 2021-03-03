@@ -18,6 +18,9 @@ router.post('/register', async (ctx, next) => {
 
 router.post('/login', async (ctx, next) => {
   const user = await User.getByEmail(ctx.request.body.email);
+
+  if (!user) return (ctx.body = { error: 'Incorrect login credentials' });
+
   const isValid = await bcrypt.compare(
     ctx.request.body.password,
     user.password
